@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DelvisSoligt.Web</title>
+    <link rel="stylesheet" href="~/lib/tailwindcss/dist/styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DelvisSoligt.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DelvisSoligt.Web</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> -->
+            
+    <div class="max-w-screen-xl mx-auto">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/mocklib/index.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

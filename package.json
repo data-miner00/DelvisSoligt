@@ -1,0 +1,21 @@
+{
+  "name": "delvis-soligt",
+  "version": "1.0.0",
+  "description": "A very cool .NET MVC template",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "keywords": [],
+  "author": "Shaun Chong <mumkhong@skiff.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@turbo/gen": "^1.10.13",
+    "eslint": "^8.49.0",
+    "turbo": "^1.10.13"
+  }
+}
