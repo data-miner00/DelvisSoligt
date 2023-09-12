@@ -1,6 +1,7 @@
 ﻿using DelvisSoligt.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System;
 
 namespace DelvisSoligt.Web.Controllers
 {
@@ -20,6 +21,7 @@ namespace DelvisSoligt.Web.Controllers
 
         public IActionResult Privacy()
         {
+            Span<byte> data = stackalloc byte[256];
             return View();
         }
 

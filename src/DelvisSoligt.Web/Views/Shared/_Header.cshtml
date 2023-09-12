@@ -1,0 +1,25 @@
+@{
+    var links = new[] { "Showcase", "Docs", "Blog", "Analytics", "Templates", "Enterprise"};
+}
+
+<div class="fixed top-0 left-0 w-full border-b border-solid border-gray-200">
+    <header class="flex justify-between max-w-screen-xl mx-auto">
+        <nav class="flex gap-6 h-16 items-center">
+            <a class="font-bold text-3xl block">.NET</a>
+            <ul class="flex gap-5">
+                @foreach (var link in links)
+                {
+                    <li class="text-gray-500 transition-color hover:text-gray-800 font-medium">
+                        <a>@link</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+
+        <div class="flex gap-3 h-16 items-center">
+            <input class="block" type="text" />
+            <button class="rounded-lg px-3 py-1 border border-solid border-gray-200 transition-colors hover:bg-gray-100">■ Deploy</button>
+            <button class="rounded-lg px-3 py-1 text-white bg-slate-800 transition-colors hover:bg-slate-800/90">Learn</button>
+        </div>
+    </header>
+</div>
