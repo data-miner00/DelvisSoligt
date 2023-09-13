@@ -17,7 +17,7 @@
         </nav>
 
         <div class="flex gap-3 h-16 items-center">
-            <button class="w-[237px] h-8 pr-[6px] pl-2 rounded-lg bg-gray-100 text-gray-400 flex items-center justify-between text-sm transition-colors hover:bg-gray-200 cursor-text">
+            <button id="input-button" class="w-[237px] h-8 pr-[6px] pl-2 rounded-lg bg-gray-100 text-gray-400 flex items-center justify-between text-sm transition-colors hover:bg-gray-200 cursor-text">
                 Search docs on Google...
                 <kbd class="rounded border border-solid border-gray-300 bg-white text-xs px-1 leading-5 text-gray-500">
                     <kbd>Ctrl</kbd><kbd>K</kbd>
@@ -29,3 +29,45 @@
         </div>
     </header>
 </div>
+
+<div id="popupOverlay" class="hidden fixed top-0 left-0 w-screen h-screen bg-white/80 z-10">
+    <div class="h-full w-full flex items-center justify-center">
+        <div class="w-[670px] bg-white rounded-lg border border-solid border-gray-200" role="dialog" style="box-shadow: 0 16px 70px rgba(0,0,0,.2);">
+            <div class="relative flex flex-col">
+                <div class="flex w-full flex-none items-center gap-2 rounded-t-lg px-4 pt-4 text-xs">
+                    <button class="h-[20px] cursor-pointer rounded-[4px] border border-solid px-1 text-xs font-medium border-1 border-inset border-blue-400 bg-blue-200 text-blue-700" tabindex="-1" type="button" aria-label="Search App Router documentation">App</button>
+                    <button class="h-[20px] cursor-pointer rounded-[4px] border border-solid px-1 text-xs font-medium bg-vercel-100 border-gray-200 text-gray-900 hover:border-gray-200 hover:text-gray-900 dark:border-gray-200 dark:bg-gray-100 dark:text-gray-900 dark:hover:text-gray-600" tabindex="-1" type="button" aria-label="Search Pages Router documentation">Pages</button>
+                </div>
+            </div>
+            <div class="flex w-full flex-none items-center border-x-0 border-b border-t-0 border-solid border-b-gray-200">
+                <input class="w-full border-none bg-inherit p-4 text-base outline-none placeholder:text-gray-700" placeholder="Search docs on Google" autocomplete="off" autocorrect="off" spellcheck="false" aria-autocomplete="list" role="combobox" type="text" value="">
+                <button aria-label="Cancel" class="mr-2 h-[20px] cursor-pointer rounded-[4px] border border-solid border-gray-200 bg-transparent px-1 text-xs font-medium text-gray-900 transition after:content-['Close'] hover:bg-gray-100 hover:text-gray-900 md:after:content-['Esc']" tabindex="-1" type="button"></button>
+            </div>
+            <div class="h-[400px]"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        var inputButton = document.getElementById("input-button")
+        var popupOverlay = document.getElementById("popupOverlay")
+        var popupDialog = document.querySelector("#popupOverlay [role='dialog']")
+
+        function togglePopup() {
+            popupOverlay.classList.toggle('hidden')
+        }
+
+        inputButton.addEventListener("click", () => {
+            togglePopup()
+        })
+
+        popupOverlay.addEventListener("click", () => {
+            togglePopup()
+        })
+
+        popupDialog.addEventListener("click", (event) => {
+            event.stopPropagation()
+        })
+    })
+</script>
