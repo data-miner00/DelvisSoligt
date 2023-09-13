@@ -1,10 +1,11 @@
 {
   "name": "delvis-soligt.web",
   "version": "1.0.0",
-  "description": "",
+  "description": "The entry point of the .NET Core MVC Template",
   "scripts": {
     "watch:css": "tailwindcss -i ./wwwroot/lib/tailwindcss/index.css -o ./wwwroot/lib/tailwindcss/dist/styles.css --watch",
-    "build:css": "tailwindcss -i ./wwwroot/lib/tailwindcss/index.css -o ./wwwroot/lib/tailwindcss/dist/styles.css"
+    "build:css": "tailwindcss -i ./wwwroot/lib/tailwindcss/index.css -o ./wwwroot/lib/tailwindcss/dist/styles.css",
+    "release:css": "tailwindcss -i ./wwwroot/lib/tailwindcss/index.css -o ./wwwroot/lib/tailwindcss/dist/styles.css --minify"
   },
   "keywords": [],
   "author": "Shaun Chong <mumkhong@skiff.com>",
