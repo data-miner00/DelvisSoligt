@@ -19,10 +19,15 @@ namespace DelvisSoligt.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Docs()
         {
             Span<byte> data = stackalloc byte[256];
             return View();
+        }
+
+        public IActionResult Showcase()
+        {
+            return this.View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
