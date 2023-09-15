@@ -12,4 +12,4 @@ An amicable .NET Core MVC Template
 - [ ] Fix Div soup
 - [ ] Add fonts
 - [ ] Authorization
-- [ ] jQuery
+- [x] jQuery
