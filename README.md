@@ -4,7 +4,7 @@ An amicable .NET Core MVC Template
 
 ## Roadmap
 
-- [ ] TypeScript integration
+- [x] TypeScript integration
 - [ ] Unit Test
 - [ ] Mobile responsive
 - [ ] Working navigation
