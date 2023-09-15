@@ -8,7 +8,7 @@ An amicable .NET Core MVC Template
 - [ ] Unit Test
 - [ ] Mobile responsive
 - [ ] Working navigation
-- [ ] Selenium UI test
+- [x] Selenium UI test
 - [ ] Fix Div soup
 - [ ] Add fonts
 - [ ] Authorization
