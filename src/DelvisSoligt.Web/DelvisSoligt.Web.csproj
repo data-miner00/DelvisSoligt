@@ -14,4 +14,8 @@
   <Target Name="Tailwind" BeforeTargets="Build">
     <Exec Command="pnpm build:css" />
   </Target>
+
+  <Target Name="esbuild" BeforeTargets="Tailwind">
+    <Exec Command="pnpm build:js" />
+  </Target>
 </Project>
