@@ -65,7 +65,12 @@
             </button>
 
             <button class="rounded-lg px-3 py-1 border border-solid border-gray-200 transition-colors hover:bg-gray-100">■ Deploy</button>
-            <button class="rounded-lg px-3 py-1 text-white bg-slate-800 transition-colors hover:bg-slate-800/90">Learn</button>
+            <a
+                href="https://learn.microsoft.com/en-us/dotnet/"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="rounded-lg px-3 py-1 text-white bg-slate-800 transition-colors hover:bg-slate-800/90"
+            >Learn</a>
         </div>
     </header>
 </div>
@@ -76,14 +81,30 @@
             <div class="relative flex flex-col">
                 <div class="flex w-full flex-none items-center gap-2 rounded-t-lg px-4 pt-4 text-xs">
                     <button class="h-[20px] cursor-pointer rounded-[4px] border border-solid px-1 text-xs font-medium border-1 border-inset border-blue-400 bg-blue-200 text-blue-700" tabindex="-1" type="button" aria-label="Search App Router documentation">App</button>
-                    <button class="h-[20px] cursor-pointer rounded-[4px] border border-solid px-1 text-xs font-medium bg-vercel-100 border-gray-200 text-gray-900 hover:border-gray-200 hover:text-gray-900 dark:border-gray-200 dark:bg-gray-100 dark:text-gray-900 dark:hover:text-gray-600" tabindex="-1" type="button" aria-label="Search Pages Router documentation">Pages</button>
+                    <button class="h-[20px] cursor-pointer rounded-[4px] border border-solid px-1 text-xs font-medium bg-vercel-100 border-gray-200 text-gray-500 hover:border-gray-200 hover:text-gray-900 dark:border-gray-200 dark:bg-gray-100 dark:text-gray-900 dark:hover:text-gray-600" tabindex="-1" type="button" aria-label="Search Pages Router documentation">Pages</button>
                 </div>
             </div>
             <div class="flex w-full flex-none items-center border-x-0 border-b border-t-0 border-solid border-b-gray-200">
-                <input class="w-full border-none bg-inherit p-4 text-base outline-none placeholder:text-gray-700" placeholder="Search docs on Google" autocomplete="off" autocorrect="off" spellcheck="false" aria-autocomplete="list" role="combobox" type="text" value="">
-                <button aria-label="Cancel" class="mr-2 h-[20px] cursor-pointer rounded-[4px] border border-solid border-gray-200 bg-transparent px-1 text-xs font-medium text-gray-900 transition after:content-['Close'] hover:bg-gray-100 hover:text-gray-900 md:after:content-['Esc']" tabindex="-1" type="button"></button>
+                <input class="w-full border-none bg-inherit p-4 text-base outline-none placeholder:text-gray-500" placeholder="Search docs on Google" autocomplete="off" autocorrect="off" spellcheck="false" aria-autocomplete="list" role="combobox" type="text" value="">
+                <button aria-label="Cancel" class="mr-2 h-[20px] cursor-pointer rounded-[4px] border border-solid border-gray-200 bg-transparent px-1 text-xs font-medium text-gray-500 transition after:content-['Close'] hover:bg-gray-100 hover:text-gray-900 md:after:content-['Esc']" tabindex="-1" type="button"></button>
             </div>
-            <div class="h-[400px]"></div>
+            <ul class="h-[400px] p-2">
+                @foreach (var item in links)
+                {
+                    <li>
+                        <a
+                            class="flex h-12 w-full gap-2 px-4 cursor-pointer items-center data-[selected=true]:text-gray-950 data-[selected=true]:bg-gray-100 text-gray-500 data-[selected=true]:rounded-lg rounded-lg hover:bg-gray-100 data-[selected=true]:dark:bg-gray-100 hover:text-gray-950"
+                            cmdk-item="" role="option" data-value="introduction"
+                        >
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" style="color: currentcolor; width: 20px; height: 20px;"><path d="M7.06883 21.6H16.219C18.7973 21.6 20.8879 19.5093 20.8879 16.9312V5.86885C20.8879 3.29074 18.7973 1.20001 16.219 1.20001H7.06883C4.49072 1.20001 2.39999 3.29074 2.39999 5.86885V16.9312C2.39999 19.5093 4.49072 21.6 7.06883 21.6Z"></path>
+	                            <path d="M15.3946 15.842H7.89178M15.3946 11.245H7.89178M10.755 6.6586H7.89232"></path>
+                            </svg>
+                            
+                            @item.Name
+                        </a>
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 </div>
