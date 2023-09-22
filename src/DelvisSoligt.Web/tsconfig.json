@@ -7,7 +7,8 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "wwwroot/js/dist"
   },
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }
