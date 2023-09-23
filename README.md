@@ -63,7 +63,7 @@
 
 ![Template screenshot](docs/imgs/screenshot.png)
 
-An lightweight template for building .NET Core MVC applications with full JavaScript ecosystem available.
+A lightweight template for building .NET Core MVC applications with a full JavaScript ecosystem available.
 
 Incentives:
 
@@ -95,7 +95,7 @@ The technologies and tools used within this template.
 
 ### Design
 
-.NET MVC is a server side web application framework. The official MVC template from Microsoft comes with a huge JavaScript and BootStrap library which I think it's cumbersome to maintain. I swapped the library with Node and npm build tools, in this case esbuild to perform code splitting and bundling. It also supports transpilation from TypeScript too and this makes the codebase more versatile and lightweight. Additionally, I can use TailwindCSS to style the web UIs which is extremely handy.
+.NET MVC is a server-side web application framework. The official MVC template from Microsoft comes with a huge JavaScript and BootStrap library which I think it is cumbersome to maintain. I swapped the library with Node and npm build tools, in this case, esbuild to perform code splitting and bundling. It also supports transpilation from TypeScript to JavaScript and this makes the codebase more versatile and lightweight. Additionally, I can use TailwindCSS to style the web UIs which is extremely handy.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,7 +120,7 @@ The list of tools that are used when development.
 
 ### Installation
 
-_To use this template for personal use or contribution, simply perform the following._ A total of **2 terminals** are required to get the core components of application up and running for development.
+_To use this template for personal use or contribution, simply perform the following._ A total of **2 terminals** are required to get the core components of the application up and running for development.
 
 1. Clone the repo
    ```sh
