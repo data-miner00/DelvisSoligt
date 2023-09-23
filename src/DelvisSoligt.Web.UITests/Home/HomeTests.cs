@@ -5,40 +5,50 @@ using Xunit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-public sealed class HomeTests
+public sealed class HomeTests : IDisposable
 {
     public const string Url = "https://localhost:7104";
+
+    public readonly IWebDriver driver;
+
+    public HomeTests()
+    {
+        this.driver = new ChromeDriver();
+        this.driver.Navigate().GoToUrl(Url);
+    }
 
     [Fact]
     public void NavigateToHomePage_ExpectTitleFound()
     {
-        var driver = new ChromeDriver();
-
-        driver.Navigate().GoToUrl(Url);
-
-        var h1 = driver.FindElement(By.TagName("h1"));
-
+        var h1 = this.driver.FindElement(By.TagName("h1"));
         h1.Text.Should().BeEquivalentTo("The Ultimate .NET Core MVC Template");
+    }
 
-        driver.Quit();
+    [Theory]
+    [InlineData(1, "https://localhost:7104/Home/Showcase")]
+    [InlineData(2, "https://localhost:7104/Home/Docs")]
+    public void HomePage_ClickedOnHeaderLink_NavigateToDestination(int linkIndex, string expectedUrl)
+    {
+        var link = this.driver.FindElement(By.CssSelector($"nav ul li:nth-child({linkIndex})"));
+        link.Click();
+        this.driver.Url.Should().Be(expectedUrl);
     }
 
     [Fact]
     public void HomePage_ClickedOnSearchButton_ExpectPopupDialog()
     {
-        var driver = new ChromeDriver();
-
-        driver.Navigate().GoToUrl(Url);
-
-        var searchButton = driver.FindElement(By.Id("input-button"));
-        var popupOverlay = driver.FindElement(By.Id("popupOverlay"));
-        var dialogItems = driver.FindElements(By.CssSelector("#popupOverlay ul li"));
+        var searchButton = this.driver.FindElement(By.Id("input-button"));
+        var popupOverlay = this.driver.FindElement(By.Id("popupOverlay"));
+        var dialogItems = this.driver.FindElements(By.CssSelector("#popupOverlay ul li"));
 
         popupOverlay.Displayed.Should().BeFalse();
         searchButton.Click();
         popupOverlay.Displayed.Should().BeTrue();
         dialogItems.Count.Should().Be(6);
+    }
 
-        driver.Quit();
+    public void Dispose()
+    {
+        this.driver.Quit();
     }
 }
