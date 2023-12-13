@@ -43,6 +43,7 @@ public sealed class HomeTests : IDisposable
 
         popupOverlay.Displayed.Should().BeFalse();
         searchButton.Click();
+        popupOverlay.GetCssValue("display").Should().Be("block");
         popupOverlay.Displayed.Should().BeTrue();
         dialogItems.Count.Should().Be(6);
     }
