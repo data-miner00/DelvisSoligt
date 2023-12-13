@@ -12,11 +12,11 @@
   "author": "Shaun Chong <mumkhong@skiff.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/jquery": "^3.5.18",
-    "@types/lodash": "^4.14.198",
-    "esbuild": "^0.19.3",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.2.2"
+    "@types/jquery": "^3.5.29",
+    "@types/lodash": "^4.14.202",
+    "esbuild": "^0.19.9",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "jquery": "^3.7.1",
