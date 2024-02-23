@@ -10,5 +10,6 @@
     "skipLibCheck": true,
     "outDir": "wwwroot/js/dist"
   },
-  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+  "include": ["Scripts/**/*.ts"],
+  "exclude": ["node_modules", "wwwroot/js/dist", "**/*.test.ts"]
 }
