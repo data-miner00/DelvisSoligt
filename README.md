@@ -86,7 +86,7 @@ The technologies and tools used within this template.
 - JavaScript
 - TypeScript
 - TailwindCSS
-- Selenium
+- Selenium (Need regularly update Chrome driver NuGet)
 - xUnit
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
